@@ -1,0 +1,36 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+inline void fastio(){
+   ios_base::sync_with_stdio(0);
+   cin.tie(0);
+   cout.tie(0);
+}
+
+int main() {
+    fastio();
+    int n,m;
+    cin >> n >> m;
+
+    vector<vector<pair<int,int>>> adj (n+1);
+
+    for(int i=0;i<m;i++){
+        int u,v,w;
+        cin >> u >> v >> w;
+
+        adj[u].push_back({v,w});
+        adj[v].push_back({u,w});
+    }
+
+    cout << "\n";
+    for(int i=1;i<=n;i++){
+        cout << "Kota ke- " << ":\n";
+        for(const auto&x:adj[i]){
+            cout << "- Ke kota " << x.first << " dengan jarak " << x.second << "\n";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
+    return 0;
+}
