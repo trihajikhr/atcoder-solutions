@@ -1,5 +1,5 @@
-#include<vector>
 #include<iostream>
+#include<vector>
 using namespace std;
 
 inline void fastio(){
@@ -27,7 +27,7 @@ int main() {
         for(int j=1;j<=n;j++){
             cout << adj[i][j] << " ";
         }
-        cout << "\n";
+    cout << "\n";
     }
     cout << "\n";
     return 0;

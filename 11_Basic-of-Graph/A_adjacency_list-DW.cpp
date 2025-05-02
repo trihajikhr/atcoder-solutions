@@ -1,5 +1,5 @@
-#include<iostream>
 #include<vector>
+#include<iostream>
 using namespace std;
 
 inline void fastio(){
@@ -13,24 +13,23 @@ int main() {
     int n,m;
     cin >> n >> m;
 
-    vector<vector<int>> adj(n+1);
+    vector<vector<pair<int,int>>> adj(n+1);
 
     for(int i=0;i<m;i++){
-        int u,v;;
-        cin >> u >> v;
+        int u,v,w;
+        cin >> u >> v >> w;
 
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+        adj[u].push_back({v,w});
     }
 
-    cout << "\n";
+    cout <<"\n";
     for(int i=1;i<=n;i++){
-        cout << "Teman ke " << i << ":\n";
+        cout << "Cinta ke-" << i << " :\n";
         for(const auto&x:adj[i]){
-            cout << "- Berteman dengan " << x << "\n";
+            cout << "- Ke " << x.first << " sebesar " << x.second << "\n";
         }
-        cout << "\n";
+        cout <<"\n";
     }
-    cout << "\n";
+    cout <<"\n";
     return 0;
 }

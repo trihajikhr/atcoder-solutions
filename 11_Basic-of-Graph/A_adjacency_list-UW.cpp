@@ -13,7 +13,7 @@ int main() {
     int n,m;
     cin >> n >> m;
 
-    vector<vector<pair<int,int>>> adj (n+1);
+    vector<vector<pair<int,int>>> adj(n+1);
 
     for(int i=0;i<m;i++){
         int u,v,w;
@@ -25,7 +25,7 @@ int main() {
 
     cout << "\n";
     for(int i=1;i<=n;i++){
-        cout << "Kota ke- " << ":\n";
+        cout << "Ke kota " << i << " :\n";
         for(const auto&x:adj[i]){
             cout << "- Ke kota " << x.first << " dengan jarak " << x.second << "\n";
         }

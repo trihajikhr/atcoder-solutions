@@ -12,23 +12,19 @@ int main() {
     fastio();
     int n,m;
     cin >> n >> m;
-
-    vector<vector<int>> adj(n+1);
+    vector<pair<int,int>> edges;
 
     for(int i=0;i<m;i++){
         int u,v;
         cin >> u >> v;
 
-        adj[u].push_back(v);
+        edges.push_back({u,v});
+        edges.push_back({v,u});
     }
 
-    cout << "\n";
-    for(int i=1;i<=n;i++){
-        cout << "Senior ke-" << i << " :\n";
-        for(const auto&x:adj[i]){
-            cout << "- Junior " << x <<"\n";
-        }
-        cout << "\n";
+    cout << "\nHasil:\n";
+    for(const auto&x:edges){
+        cout << x.first << " -> " << x.second << "\n";
     }
     cout << "\n";
     return 0;

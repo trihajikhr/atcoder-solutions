@@ -11,7 +11,7 @@ inline void fastio(){
 int main() {
     fastio();
     int n,m;
-    cin >> n >> m;
+    cin >> n >>m;
 
     vector<vector<int>> adj(n+1);
 
@@ -20,13 +20,14 @@ int main() {
         cin >> u >> v;
 
         adj[u].push_back(v);
+        adj[v].push_back(u);
     }
 
     cout << "\n";
     for(int i=1;i<=n;i++){
-        cout << "Senior ke-" << i << " :\n";
+        cout << "Teman ke-" << i << " :\n";
         for(const auto&x:adj[i]){
-            cout << "- Junior " << x <<"\n";
+            cout << "- Berteman dengan " << x << "\n";
         }
         cout << "\n";
     }

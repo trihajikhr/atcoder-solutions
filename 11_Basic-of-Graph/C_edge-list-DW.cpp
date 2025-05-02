@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<tuple>
 using namespace std;
 
 inline void fastio(){
@@ -8,28 +9,24 @@ inline void fastio(){
    cout.tie(0);
 }
 
-const int INF = 1e9;
-
 int main() {
     fastio();
     int n,m;
     cin >> n >> m;
+    vector<tuple<int,int,int>> edges;
 
-    vector<vector<int>> adj(n+1, vector<int>(n+1, INF));
-    
     for(int i=0;i<m;i++){
         int u,v,w;
         cin >> u >> v >> w;
 
-        adj[u][v] = w;
+        edges.push_back({u,v,w});
     }
 
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
-            if(adj[i][j]==INF) cout << " INF";
-            else cout << adj[i][j] << " \n";
-        }
-        cout << "\n";
+    cout << "\nDaftar Jalan: \n";
+    for(const auto&edge:edges){
+        int u,v,w;
+        tie(u,v,w) = edge;
+        cout << u << " -> " << v << " (" << w << ")\n";
     }
     cout << "\n";
     return 0;
