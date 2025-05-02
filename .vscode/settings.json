@@ -73,7 +73,8 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "valarray": "cpp",
-        "alpro-matkulcpp": "cpp"
+        "alpro-matkulcpp": "cpp",
+        "a_undirected-connected": "cpp"
     },
     "cpu.createFiles": false,
     "cpu.createFileName": "{{#contest}}{{.}}/{{/contest}}{{problem}}.cpp",
